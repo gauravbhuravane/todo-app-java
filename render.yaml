@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: todo-app-java
+    env: java
+    buildCommand: "chmod +x mvnw && ./mvnw -B -DskipTests package"
+    startCommand: "java -jar target/*.jar"
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8080
